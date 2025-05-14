@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حاسبة العمر</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>أدخل تاريخ ميلادك</h2>
+    <input type="number" id="day" placeholder="اليوم (1-31)" min="1" max="31">
+    <input type="number" id="month" placeholder="الشهر (1-12)" min="1" max="12">
+    <input type="number" id="year" placeholder="السنة (مثال: 1990)" min="1900" max="2025">
+    <button onclick="calculateAge()">احسب العمر</button>
+    <p id="result"></p>
+    <progress id="progressBar" value="0" max="100"></progress>
+    <button id="shareBtn" onclick="shareOnFacebook()" class="share-btn" style="display: none;">شارك على فيسبوك</button>
+  </div>
+
+  <!-- النافذة المنبثقة -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">×</span>
+      <h2>نتيجة عمرك</h2>
+      <p id="modal-result"></p>
+      <button onclick="playSound('open')" class="sound-btn">شغّل الصوت المنبثق</button>
+    </div>
+  </div>
+
+  <!-- الأصوات -->
+  <audio id="clickSound" src="https://www.freesound.org/data/previews/316/316847_4291568-lq.mp3"></audio>
+  <audio id="openSound" src="https://www.freesound.org/data/previews/171/171104_2426728-lq.mp3"></audio>
+  <audio id="closeSound" src="https://www.freesound.org/data/previews/265/265993_4924596-lq.mp3"></audio>
+
+  <!-- SDK لفيسبوك -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: 'YOUR_APP_ID', // استبدل بـ App ID الخاص بك
+        xfbml: true,
+        version: 'v20.0'
+      });
+      FB.Canvas.setAutoGrow();
+    };
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

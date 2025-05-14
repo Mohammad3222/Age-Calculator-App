@@ -1,0 +1,161 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1a1a1a;
+  color: #fff;
+  direction: rtl;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 150px;
+  border: 2px solid #0ff;
+  border-radius: 5px;
+  background: transparent;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+  border-color: #fff;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #0ff, #00f);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #0ff;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #00f, #0ff);
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+progress {
+  width: 80%;
+  height: 20px;
+  margin: 10px auto;
+  display: block;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #333;
+  border-radius: 10px;
+}
+
+progress[value]::-webkit-progress-value {
+  background: linear-gradient(45deg, #0ff, #00f);
+  border-radius: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #222;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 20px #0ff;
+  animation: pop 0.5s ease;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #0ff;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff;
+}
+
+.sound-btn {
+  padding: 8px 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #ff0, #f0f);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #ff0;
+}
+
+.sound-btn:hover {
+  background: linear-gradient(45deg, #f0f, #ff0);
+  box-shadow: 0 0 20px #ff0;
+}
+
+.share-btn {
+  padding: 8px 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #1877f2, #3b5998);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #1877f2;
+}
+
+.share-btn:hover {
+  background: linear-gradient(45deg, #3b5998, #1877f2);
+  box-shadow: 0 0 20px #1877f2;
+}
